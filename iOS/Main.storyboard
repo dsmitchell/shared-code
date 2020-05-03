@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fNT-kG-w1a">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video View Controller-->
+        <scene sceneID="hVn-c4-VY3">
+            <objects>
+                <viewController id="fNT-kG-w1a" customClass="VideoViewController" customModule="Shared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rsz-nq-m2j" customClass="VideoPlayerView" customModule="Shared" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q07-gR-sbe">
+                                <rect key="frame" x="171" y="64" width="72" height="30"/>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="fNT-kG-w1a" eventType="touchUpInside" id="Ken-Y4-4om"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q07-gR-sbe" firstAttribute="centerX" secondItem="ETU-Rn-Boj" secondAttribute="centerX" id="db4-gX-Cxc"/>
+                            <constraint firstItem="q07-gR-sbe" firstAttribute="top" secondItem="ETU-Rn-Boj" secondAttribute="top" constant="20" id="jBX-LO-oFS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ETU-Rn-Boj"/>
+                        <connections>
+                            <outlet property="delegate" destination="fNT-kG-w1a" id="OLP-Ne-iwV"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="q07-gR-sbe" id="xag-BJ-COh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9z-xN-Dr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="110"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9w5-Yk-Uwd">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shared Sample-->
+        <scene sceneID="Nei-l4-8AJ">
+            <objects>
+                <viewController title="Shared Sample" id="9w5-Yk-Uwd" customClass="VideoViewController" customModule="Shared" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OBn-gO-rbs"/>
+                        <viewControllerLayoutGuide type="bottom" id="cl6-X6-7Ra"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bo8-Wg-oYJ" customClass="VideoPlayerView" customModule="Shared" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-87-afC">
+                                <rect key="frame" x="831.5" y="68" width="257" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="9w5-Yk-Uwd" eventType="primaryActionTriggered" id="Uaf-up-4Zg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="tqh-87-afC" firstAttribute="centerX" secondItem="bo8-Wg-oYJ" secondAttribute="centerX" id="3Tb-02-M2H"/>
+                            <constraint firstItem="tqh-87-afC" firstAttribute="top" secondItem="OBn-gO-rbs" secondAttribute="bottom" constant="8" id="o0N-LJ-cK6"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="9w5-Yk-Uwd" id="Vne-tK-ZHI"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="tqh-87-afC" id="ZUQ-rl-kdt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zr9-vJ-6qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="69"/>
+        </scene>
+    </scenes>
+</document>

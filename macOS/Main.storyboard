@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q3y-3S-zed">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="ega-nA-aJB">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="Q3y-3S-zed" sceneMemberID="viewController">
+                    <window key="window" title="Shared Sample" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Cam-46-nh0">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="310" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <connections>
+                            <outlet property="delegate" destination="Q3y-3S-zed" id="ZWS-2b-Alq"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="5U8-Ki-z1b" kind="relationship" relationship="window.shadowedContentViewController" id="6Fu-qz-xUA"/>
+                    </connections>
+                </windowController>
+                <customObject id="iva-EB-Are" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="-143"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="LBp-eN-kvz">
+            <objects>
+                <viewController id="5U8-Ki-z1b" customClass="VideoViewController" customModule="Shared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="J9S-2q-lXp" customClass="VideoPlayerView" customModule="Shared" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zU1-w8-llh">
+                                <rect key="frame" x="188" y="222" width="104" height="32"/>
+                                <buttonCell key="cell" type="push" title="Play Video" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wPg-jr-k9b">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="playButtonTapped:" target="5U8-Ki-z1b" id="RQP-fx-Zsv"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zU1-w8-llh" firstAttribute="top" secondItem="J9S-2q-lXp" secondAttribute="top" constant="20" id="AUC-xg-k2i"/>
+                            <constraint firstItem="zU1-w8-llh" firstAttribute="centerX" secondItem="J9S-2q-lXp" secondAttribute="centerX" id="wPh-TI-20O"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="5U8-Ki-z1b" id="lhJ-AF-dVQ"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="zU1-w8-llh" id="282-VD-dqd"/>
+                    </connections>
+                </viewController>
+                <customObject id="aPI-pu-85d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="272"/>
+        </scene>
+        <!--Application-->
+        <scene sceneID="Met-gK-FBD">
+            <objects>
+                <application id="VAl-Ig-0ey" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="l6d-ZS-NMI">
+                        <items>
+                            <menuItem title="Shared" id="z8Q-6p-OtA" userLabel="Shared">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Shared" systemMenu="apple" id="1Mf-8m-VKy">
+                                    <items>
+                                        <menuItem title="About Shared" id="poO-3J-a4Q">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="mpJ-92-Xdz" id="eKd-t9-OaC"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="zma-nJ-ldJ"/>
+                                        <menuItem title="Hide Shared" keyEquivalent="h" id="JDu-jA-gPP">
+                                            <connections>
+                                                <action selector="hide:" target="mpJ-92-Xdz" id="X5z-Qf-YBq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="EFy-U6-Zn5">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="mpJ-92-Xdz" id="Pbj-4q-mee"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Cse-71-yBk">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="mpJ-92-Xdz" id="trb-Ck-jsh"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4hG-Wg-zwm"/>
+                                        <menuItem title="Quit Shared" keyEquivalent="q" id="sHb-rc-BMV">
+                                            <connections>
+                                                <action selector="terminate:" target="mpJ-92-Xdz" id="l4l-oh-YO6"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="shR-ZD-2LG" id="dzq-CF-7SO"/>
+                    </connections>
+                </application>
+                <customObject id="mpJ-92-Xdz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="shR-ZD-2LG" customClass="AppDelegate" customModule="Shared" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="-407"/>
+        </scene>
+    </scenes>
+</document>
